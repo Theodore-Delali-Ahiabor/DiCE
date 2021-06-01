@@ -18,3 +18,15 @@ C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.vbpro
 C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.exe
 C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.xml
 C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.pdb
+C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.vbprojResolveAssemblyReference.cache
+C:\Users\theod\Desktop\DiCE\DiCE\bin\Debug\DiCE.exe.config
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.exe
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.xml
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.pdb
+C:\Users\theod\Desktop\DiCE\DiCE\bin\Debug\DiCE.exe
+C:\Users\theod\Desktop\DiCE\DiCE\bin\Debug\DiCE.pdb
+C:\Users\theod\Desktop\DiCE\DiCE\bin\Debug\DiCE.xml
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.vbprojResolveAssemblyReference.cache
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.DiCE.resources
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.Resources.resources
+C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.vbproj.GenerateResource.Cache

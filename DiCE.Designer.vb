@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormDiCE
+Partial Class DiCE
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class FormDiCE
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDiCE))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DiCE))
         Me.statusbar = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lbluser = New System.Windows.Forms.ToolStripStatusLabel()
@@ -49,7 +49,6 @@ Partial Class FormDiCE
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportAProblemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.systemtime = New System.Windows.Forms.Timer(Me.components)
-        Me.btnlogout = New System.Windows.Forms.Button()
         Me.buttonhidetimer = New System.Windows.Forms.Timer(Me.components)
         Me.loginpanel = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -64,9 +63,12 @@ Partial Class FormDiCE
         Me.chefpanel = New System.Windows.Forms.Panel()
         Me.adminpanel = New System.Windows.Forms.Panel()
         Me.waiterpanel = New System.Windows.Forms.Panel()
+        Me.userspanel = New System.Windows.Forms.Panel()
+        Me.btnlogout = New System.Windows.Forms.Button()
         Me.statusbar.SuspendLayout()
         Me.menubar.SuspendLayout()
         Me.loginpanel.SuspendLayout()
+        Me.userspanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'statusbar
@@ -238,25 +240,6 @@ Partial Class FormDiCE
         '
         Me.systemtime.Enabled = True
         '
-        'btnlogout
-        '
-        Me.btnlogout.BackColor = System.Drawing.Color.Turquoise
-        Me.btnlogout.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnlogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnlogout.FlatAppearance.BorderSize = 0
-        Me.btnlogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogout.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btnlogout.Location = New System.Drawing.Point(1193, 593)
-        Me.btnlogout.Name = "btnlogout"
-        Me.btnlogout.Size = New System.Drawing.Size(119, 52)
-        Me.btnlogout.TabIndex = 15
-        Me.btnlogout.Text = "LOGOUT"
-        Me.btnlogout.UseVisualStyleBackColor = False
-        Me.btnlogout.Visible = False
-        '
         'buttonhidetimer
         '
         '
@@ -271,10 +254,10 @@ Partial Class FormDiCE
         Me.loginpanel.Controls.Add(Me.txtusername)
         Me.loginpanel.Controls.Add(Me.Label2)
         Me.loginpanel.Controls.Add(Me.Label1)
-        Me.loginpanel.Location = New System.Drawing.Point(15, 27)
+        Me.loginpanel.Location = New System.Drawing.Point(16, 36)
         Me.loginpanel.Name = "loginpanel"
-        Me.loginpanel.Size = New System.Drawing.Size(68, 160)
-        Me.loginpanel.TabIndex = 8
+        Me.loginpanel.Size = New System.Drawing.Size(317, 184)
+        Me.loginpanel.TabIndex = 1
         '
         'Label8
         '
@@ -296,7 +279,7 @@ Partial Class FormDiCE
         '
         'btnlogin
         '
-        Me.btnlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnlogin.BackColor = System.Drawing.Color.LightGreen
         Me.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnlogin.FlatAppearance.BorderSize = 0
@@ -304,7 +287,7 @@ Partial Class FormDiCE
         Me.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnlogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnlogin.ForeColor = System.Drawing.Color.LightSeaGreen
         Me.btnlogin.Location = New System.Drawing.Point(631, 444)
         Me.btnlogin.Name = "btnlogin"
         Me.btnlogin.Size = New System.Drawing.Size(111, 47)
@@ -353,13 +336,13 @@ Partial Class FormDiCE
         '
         Me.btnpopup.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnpopup.AutoSize = True
-        Me.btnpopup.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnpopup.BackColor = System.Drawing.Color.LightCoral
         Me.btnpopup.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnpopup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnpopup.FlatAppearance.BorderSize = 0
         Me.btnpopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnpopup.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, CType(0, Byte))
-        Me.btnpopup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnpopup.ForeColor = System.Drawing.Color.Linen
         Me.btnpopup.Location = New System.Drawing.Point(1100, 45)
         Me.btnpopup.Name = "btnpopup"
         Me.btnpopup.Size = New System.Drawing.Size(238, 50)
@@ -373,40 +356,73 @@ Partial Class FormDiCE
         Me.managerpanel.BackColor = System.Drawing.Color.Azure
         Me.managerpanel.BackgroundImage = Global.DiCE.My.Resources.Resources.Manager
         Me.managerpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.managerpanel.Location = New System.Drawing.Point(239, 27)
+        Me.managerpanel.Location = New System.Drawing.Point(153, 3)
         Me.managerpanel.Name = "managerpanel"
         Me.managerpanel.Size = New System.Drawing.Size(70, 160)
-        Me.managerpanel.TabIndex = 13
+        Me.managerpanel.TabIndex = 5
         '
         'chefpanel
         '
         Me.chefpanel.BackColor = System.Drawing.Color.Azure
         Me.chefpanel.BackgroundImage = Global.DiCE.My.Resources.Resources.Chef_toon
         Me.chefpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.chefpanel.Location = New System.Drawing.Point(166, 27)
+        Me.chefpanel.Location = New System.Drawing.Point(80, 3)
         Me.chefpanel.Name = "chefpanel"
         Me.chefpanel.Size = New System.Drawing.Size(67, 160)
-        Me.chefpanel.TabIndex = 12
+        Me.chefpanel.TabIndex = 4
         '
         'adminpanel
         '
         Me.adminpanel.BackColor = System.Drawing.Color.Azure
         Me.adminpanel.BackgroundImage = Global.DiCE.My.Resources.Resources.Ghost_Backgound
         Me.adminpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.adminpanel.Location = New System.Drawing.Point(89, 27)
+        Me.adminpanel.Location = New System.Drawing.Point(3, 3)
         Me.adminpanel.Name = "adminpanel"
         Me.adminpanel.Size = New System.Drawing.Size(71, 160)
-        Me.adminpanel.TabIndex = 11
+        Me.adminpanel.TabIndex = 3
         '
         'waiterpanel
         '
         Me.waiterpanel.BackColor = System.Drawing.Color.Azure
         Me.waiterpanel.BackgroundImage = Global.DiCE.My.Resources.Resources.Waiter
         Me.waiterpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.waiterpanel.Location = New System.Drawing.Point(315, 27)
+        Me.waiterpanel.Location = New System.Drawing.Point(229, 3)
         Me.waiterpanel.Name = "waiterpanel"
         Me.waiterpanel.Size = New System.Drawing.Size(73, 160)
-        Me.waiterpanel.TabIndex = 10
+        Me.waiterpanel.TabIndex = 6
+        '
+        'userspanel
+        '
+        Me.userspanel.BackColor = System.Drawing.Color.Azure
+        Me.userspanel.Controls.Add(Me.btnlogout)
+        Me.userspanel.Controls.Add(Me.chefpanel)
+        Me.userspanel.Controls.Add(Me.managerpanel)
+        Me.userspanel.Controls.Add(Me.waiterpanel)
+        Me.userspanel.Controls.Add(Me.adminpanel)
+        Me.userspanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.userspanel.Location = New System.Drawing.Point(0, 0)
+        Me.userspanel.Name = "userspanel"
+        Me.userspanel.Size = New System.Drawing.Size(1350, 731)
+        Me.userspanel.TabIndex = 2
+        Me.userspanel.Visible = False
+        '
+        'btnlogout
+        '
+        Me.btnlogout.BackColor = System.Drawing.Color.Turquoise
+        Me.btnlogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnlogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnlogout.FlatAppearance.BorderSize = 0
+        Me.btnlogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogout.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.btnlogout.Location = New System.Drawing.Point(1182, 587)
+        Me.btnlogout.Name = "btnlogout"
+        Me.btnlogout.Size = New System.Drawing.Size(119, 52)
+        Me.btnlogout.TabIndex = 16
+        Me.btnlogout.Text = "LOGOUT"
+        Me.btnlogout.UseVisualStyleBackColor = False
         '
         'FormDiCE
         '
@@ -415,15 +431,11 @@ Partial Class FormDiCE
         Me.AutoScroll = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1350, 731)
-        Me.Controls.Add(Me.btnlogout)
         Me.Controls.Add(Me.btnpopup)
-        Me.Controls.Add(Me.managerpanel)
-        Me.Controls.Add(Me.chefpanel)
-        Me.Controls.Add(Me.adminpanel)
-        Me.Controls.Add(Me.waiterpanel)
-        Me.Controls.Add(Me.loginpanel)
         Me.Controls.Add(Me.statusbar)
         Me.Controls.Add(Me.menubar)
+        Me.Controls.Add(Me.userspanel)
+        Me.Controls.Add(Me.loginpanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menubar
@@ -437,6 +449,7 @@ Partial Class FormDiCE
         Me.menubar.PerformLayout()
         Me.loginpanel.ResumeLayout(False)
         Me.loginpanel.PerformLayout()
+        Me.userspanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -478,8 +491,9 @@ Partial Class FormDiCE
     Friend WithEvents chefpanel As System.Windows.Forms.Panel
     Friend WithEvents managerpanel As System.Windows.Forms.Panel
     Friend WithEvents btnpopup As System.Windows.Forms.Button
-    Friend WithEvents btnlogout As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents buttonhidetimer As System.Windows.Forms.Timer
+    Friend WithEvents userspanel As System.Windows.Forms.Panel
+    Friend WithEvents btnlogout As System.Windows.Forms.Button
 
 End Class
