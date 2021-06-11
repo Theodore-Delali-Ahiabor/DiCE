@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class DiCE
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class DiCE
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DiCE))
@@ -63,17 +63,30 @@ Partial Class DiCE
         Me.managerpanel = New System.Windows.Forms.Panel()
         Me.chefpanel = New System.Windows.Forms.Panel()
         Me.adminpanel = New System.Windows.Forms.Panel()
-        Me.btnorderstats = New System.Windows.Forms.Button()
+        Me.tabadminorderstats = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.updateuserpanel = New System.Windows.Forms.Panel()
+        Me.adminsearchuserpanel = New System.Windows.Forms.Panel()
         Me.updatepanel = New System.Windows.Forms.Panel()
+        Me.chkbupdatemaritalstat = New System.Windows.Forms.CheckBox()
+        Me.genderpanel = New System.Windows.Forms.Panel()
+        Me.rbtnupdatemale = New System.Windows.Forms.RadioButton()
+        Me.rbtnupdatefemale = New System.Windows.Forms.RadioButton()
+        Me.maritalstatpanel = New System.Windows.Forms.Panel()
+        Me.rbtnupdatesingle = New System.Windows.Forms.RadioButton()
+        Me.rbtnupdatemarried = New System.Windows.Forms.RadioButton()
+        Me.txtupdategender = New System.Windows.Forms.ComboBox()
+        Me.txtupdatemaritalstat = New System.Windows.Forms.ComboBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.btnadmindeleteuser = New System.Windows.Forms.Button()
+        Me.txtupdatesalary = New System.Windows.Forms.TextBox()
+        Me.txtupdateretrieveorupdateid = New System.Windows.Forms.TextBox()
         Me.btneditorupdateor = New System.Windows.Forms.Button()
         Me.chkbupdateactive = New System.Windows.Forms.CheckBox()
         Me.updatedatetimepicker = New System.Windows.Forms.DateTimePicker()
         Me.txtupdatefname = New System.Windows.Forms.TextBox()
         Me.txtupdatelname = New System.Windows.Forms.TextBox()
         Me.txtupdateonames = New System.Windows.Forms.TextBox()
-        Me.txtupdategender = New System.Windows.Forms.TextBox()
         Me.txtupdateemail = New System.Windows.Forms.TextBox()
         Me.txtupdatepassword = New System.Windows.Forms.TextBox()
         Me.txtupdateusername = New System.Windows.Forms.TextBox()
@@ -92,20 +105,27 @@ Partial Class DiCE
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.numberretrievepanel = New System.Windows.Forms.Panel()
-        Me.txtretrieveid = New System.Windows.Forms.TextBox()
+        Me.numbersearchpanel = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnretrieve = New System.Windows.Forms.Button()
         Me.txtretrievenumber = New System.Windows.Forms.TextBox()
-        Me.deleteuserpanel = New System.Windows.Forms.Panel()
-        Me.userlogspanel = New System.Windows.Forms.Panel()
-        Me.adduserpanel = New System.Windows.Forms.Panel()
+        Me.adminuserlogspanel = New System.Windows.Forms.Panel()
+        Me.adminorderstatspanel = New System.Windows.Forms.Panel()
+        Me.adminadduserpanel = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.rbtnmale = New System.Windows.Forms.RadioButton()
+        Me.rbtnfemale = New System.Windows.Forms.RadioButton()
+        Me.txtnewmaritalstat = New System.Windows.Forms.Panel()
+        Me.chkbmaritalstat = New System.Windows.Forms.CheckBox()
+        Me.rbtnsingle = New System.Windows.Forms.RadioButton()
+        Me.rbtnmarried = New System.Windows.Forms.RadioButton()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.txtnewsalary = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cmbusertype = New System.Windows.Forms.ComboBox()
         Me.btnnewusersave = New System.Windows.Forms.Button()
         Me.chkbnewactive = New System.Windows.Forms.CheckBox()
-        Me.rbtnfemale = New System.Windows.Forms.RadioButton()
-        Me.rbtnmale = New System.Windows.Forms.RadioButton()
         Me.txtnewDOB = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -122,11 +142,9 @@ Partial Class DiCE
         Me.txtnewlname = New System.Windows.Forms.TextBox()
         Me.txtnewonames = New System.Windows.Forms.TextBox()
         Me.txtnewfname = New System.Windows.Forms.TextBox()
-        Me.orderstatspanel = New System.Windows.Forms.Panel()
-        Me.btnviewuserlogs = New System.Windows.Forms.Button()
-        Me.btndeleteuser = New System.Windows.Forms.Button()
-        Me.btnupdateinfo = New System.Windows.Forms.Button()
-        Me.btnadduser = New System.Windows.Forms.Button()
+        Me.tabadminviewuserlogs = New System.Windows.Forms.Button()
+        Me.tabadminsearchuser = New System.Windows.Forms.Button()
+        Me.tabadminadduser = New System.Windows.Forms.Button()
         Me.waiterpanel = New System.Windows.Forms.Panel()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -134,6 +152,7 @@ Partial Class DiCE
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.FoodsDataGridView = New System.Windows.Forms.DataGridView()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -155,8 +174,8 @@ Partial Class DiCE
         Me.btnsignupsave = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.txtsignupusername = New System.Windows.Forms.TextBox()
-        Me.txtre = New System.Windows.Forms.Label()
-        Me.txtsignupreenterpassword = New System.Windows.Forms.TextBox()
+        Me.lblocnfirmpassword = New System.Windows.Forms.Label()
+        Me.txtsignupconfirmpassword = New System.Windows.Forms.TextBox()
         Me.btnsignupeligibilityupdate = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.txtsignupid = New System.Windows.Forms.TextBox()
@@ -164,19 +183,23 @@ Partial Class DiCE
         Me.txtsignupmobilenumber = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.lblsignupmobilenumber = New System.Windows.Forms.Label()
-        Me.txtupdateretrieveorupdateid = New System.Windows.Forms.TextBox()
         Me.statusbar.SuspendLayout()
         Me.menubar.SuspendLayout()
         Me.loginpanel.SuspendLayout()
         Me.adminpanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.updateuserpanel.SuspendLayout()
+        Me.adminsearchuserpanel.SuspendLayout()
         Me.updatepanel.SuspendLayout()
-        Me.numberretrievepanel.SuspendLayout()
-        Me.adduserpanel.SuspendLayout()
+        Me.genderpanel.SuspendLayout()
+        Me.maritalstatpanel.SuspendLayout()
+        Me.numbersearchpanel.SuspendLayout()
+        Me.adminadduserpanel.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.txtnewmaritalstat.SuspendLayout()
         Me.waiterpanel.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.FoodsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.userspanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -506,57 +529,64 @@ Partial Class DiCE
         '
         Me.adminpanel.BackColor = System.Drawing.Color.Azure
         Me.adminpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.adminpanel.Controls.Add(Me.btnorderstats)
+        Me.adminpanel.Controls.Add(Me.tabadminorderstats)
         Me.adminpanel.Controls.Add(Me.Panel2)
-        Me.adminpanel.Controls.Add(Me.btnviewuserlogs)
-        Me.adminpanel.Controls.Add(Me.btndeleteuser)
-        Me.adminpanel.Controls.Add(Me.btnupdateinfo)
-        Me.adminpanel.Controls.Add(Me.btnadduser)
+        Me.adminpanel.Controls.Add(Me.tabadminviewuserlogs)
+        Me.adminpanel.Controls.Add(Me.tabadminsearchuser)
+        Me.adminpanel.Controls.Add(Me.tabadminadduser)
         Me.adminpanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.adminpanel.Location = New System.Drawing.Point(0, 0)
         Me.adminpanel.Name = "adminpanel"
         Me.adminpanel.Size = New System.Drawing.Size(1350, 682)
         Me.adminpanel.TabIndex = 3
         '
-        'btnorderstats
+        'tabadminorderstats
         '
-        Me.btnorderstats.BackColor = System.Drawing.Color.LightCyan
-        Me.btnorderstats.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnorderstats.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnorderstats.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnorderstats.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btnorderstats.Location = New System.Drawing.Point(49, 411)
-        Me.btnorderstats.Name = "btnorderstats"
-        Me.btnorderstats.Size = New System.Drawing.Size(171, 52)
-        Me.btnorderstats.TabIndex = 7
-        Me.btnorderstats.Text = "VIEW ORDER STATISTICS"
-        Me.btnorderstats.UseVisualStyleBackColor = False
+        Me.tabadminorderstats.BackColor = System.Drawing.Color.LightCyan
+        Me.tabadminorderstats.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.tabadminorderstats.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.tabadminorderstats.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tabadminorderstats.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.tabadminorderstats.Location = New System.Drawing.Point(49, 230)
+        Me.tabadminorderstats.Name = "tabadminorderstats"
+        Me.tabadminorderstats.Size = New System.Drawing.Size(171, 52)
+        Me.tabadminorderstats.TabIndex = 7
+        Me.tabadminorderstats.Text = "VIEW ORDER STATISTICS"
+        Me.tabadminorderstats.UseVisualStyleBackColor = False
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.Controls.Add(Me.updateuserpanel)
-        Me.Panel2.Controls.Add(Me.deleteuserpanel)
-        Me.Panel2.Controls.Add(Me.userlogspanel)
-        Me.Panel2.Controls.Add(Me.adduserpanel)
-        Me.Panel2.Controls.Add(Me.orderstatspanel)
+        Me.Panel2.Controls.Add(Me.adminsearchuserpanel)
+        Me.Panel2.Controls.Add(Me.adminuserlogspanel)
+        Me.Panel2.Controls.Add(Me.adminorderstatspanel)
+        Me.Panel2.Controls.Add(Me.adminadduserpanel)
         Me.Panel2.Location = New System.Drawing.Point(259, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1091, 682)
         Me.Panel2.TabIndex = 6
         '
-        'updateuserpanel
+        'adminsearchuserpanel
         '
-        Me.updateuserpanel.Controls.Add(Me.updatepanel)
-        Me.updateuserpanel.Controls.Add(Me.numberretrievepanel)
-        Me.updateuserpanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.updateuserpanel.Location = New System.Drawing.Point(0, 0)
-        Me.updateuserpanel.Name = "updateuserpanel"
-        Me.updateuserpanel.Size = New System.Drawing.Size(1091, 682)
-        Me.updateuserpanel.TabIndex = 0
+        Me.adminsearchuserpanel.Controls.Add(Me.updatepanel)
+        Me.adminsearchuserpanel.Controls.Add(Me.numbersearchpanel)
+        Me.adminsearchuserpanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.adminsearchuserpanel.Location = New System.Drawing.Point(0, 0)
+        Me.adminsearchuserpanel.Name = "adminsearchuserpanel"
+        Me.adminsearchuserpanel.Size = New System.Drawing.Size(1091, 682)
+        Me.adminsearchuserpanel.TabIndex = 0
         '
         'updatepanel
         '
+        Me.updatepanel.Controls.Add(Me.chkbupdatemaritalstat)
+        Me.updatepanel.Controls.Add(Me.genderpanel)
+        Me.updatepanel.Controls.Add(Me.maritalstatpanel)
+        Me.updatepanel.Controls.Add(Me.txtupdategender)
+        Me.updatepanel.Controls.Add(Me.txtupdatemaritalstat)
+        Me.updatepanel.Controls.Add(Me.Label37)
+        Me.updatepanel.Controls.Add(Me.Label36)
+        Me.updatepanel.Controls.Add(Me.btnadmindeleteuser)
+        Me.updatepanel.Controls.Add(Me.txtupdatesalary)
         Me.updatepanel.Controls.Add(Me.txtupdateretrieveorupdateid)
         Me.updatepanel.Controls.Add(Me.btneditorupdateor)
         Me.updatepanel.Controls.Add(Me.chkbupdateactive)
@@ -564,7 +594,6 @@ Partial Class DiCE
         Me.updatepanel.Controls.Add(Me.txtupdatefname)
         Me.updatepanel.Controls.Add(Me.txtupdatelname)
         Me.updatepanel.Controls.Add(Me.txtupdateonames)
-        Me.updatepanel.Controls.Add(Me.txtupdategender)
         Me.updatepanel.Controls.Add(Me.txtupdateemail)
         Me.updatepanel.Controls.Add(Me.txtupdatepassword)
         Me.updatepanel.Controls.Add(Me.txtupdateusername)
@@ -589,9 +618,162 @@ Partial Class DiCE
         Me.updatepanel.Size = New System.Drawing.Size(1091, 682)
         Me.updatepanel.TabIndex = 32
         '
+        'chkbupdatemaritalstat
+        '
+        Me.chkbupdatemaritalstat.AutoSize = True
+        Me.chkbupdatemaritalstat.Location = New System.Drawing.Point(425, 548)
+        Me.chkbupdatemaritalstat.Name = "chkbupdatemaritalstat"
+        Me.chkbupdatemaritalstat.Size = New System.Drawing.Size(15, 14)
+        Me.chkbupdatemaritalstat.TabIndex = 36
+        Me.chkbupdatemaritalstat.UseVisualStyleBackColor = True
+        Me.chkbupdatemaritalstat.Visible = False
+        '
+        'genderpanel
+        '
+        Me.genderpanel.Controls.Add(Me.rbtnupdatemale)
+        Me.genderpanel.Controls.Add(Me.rbtnupdatefemale)
+        Me.genderpanel.Enabled = False
+        Me.genderpanel.Location = New System.Drawing.Point(616, 487)
+        Me.genderpanel.Name = "genderpanel"
+        Me.genderpanel.Size = New System.Drawing.Size(305, 45)
+        Me.genderpanel.TabIndex = 40
+        Me.genderpanel.Visible = False
+        '
+        'rbtnupdatemale
+        '
+        Me.rbtnupdatemale.AutoSize = True
+        Me.rbtnupdatemale.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnupdatemale.Location = New System.Drawing.Point(25, 10)
+        Me.rbtnupdatemale.Name = "rbtnupdatemale"
+        Me.rbtnupdatemale.Size = New System.Drawing.Size(61, 24)
+        Me.rbtnupdatemale.TabIndex = 24
+        Me.rbtnupdatemale.Text = "Male"
+        Me.rbtnupdatemale.UseVisualStyleBackColor = True
+        '
+        'rbtnupdatefemale
+        '
+        Me.rbtnupdatefemale.AutoSize = True
+        Me.rbtnupdatefemale.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnupdatefemale.Location = New System.Drawing.Point(126, 10)
+        Me.rbtnupdatefemale.Name = "rbtnupdatefemale"
+        Me.rbtnupdatefemale.Size = New System.Drawing.Size(80, 24)
+        Me.rbtnupdatefemale.TabIndex = 25
+        Me.rbtnupdatefemale.Text = "Female"
+        Me.rbtnupdatefemale.UseVisualStyleBackColor = True
+        '
+        'maritalstatpanel
+        '
+        Me.maritalstatpanel.Controls.Add(Me.rbtnupdatesingle)
+        Me.maritalstatpanel.Controls.Add(Me.rbtnupdatemarried)
+        Me.maritalstatpanel.Enabled = False
+        Me.maritalstatpanel.Location = New System.Drawing.Point(616, 538)
+        Me.maritalstatpanel.Name = "maritalstatpanel"
+        Me.maritalstatpanel.Size = New System.Drawing.Size(306, 44)
+        Me.maritalstatpanel.TabIndex = 39
+        Me.maritalstatpanel.Visible = False
+        '
+        'rbtnupdatesingle
+        '
+        Me.rbtnupdatesingle.AutoSize = True
+        Me.rbtnupdatesingle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnupdatesingle.Location = New System.Drawing.Point(32, 10)
+        Me.rbtnupdatesingle.Name = "rbtnupdatesingle"
+        Me.rbtnupdatesingle.Size = New System.Drawing.Size(71, 24)
+        Me.rbtnupdatesingle.TabIndex = 34
+        Me.rbtnupdatesingle.Text = "Single"
+        Me.rbtnupdatesingle.UseVisualStyleBackColor = True
+        '
+        'rbtnupdatemarried
+        '
+        Me.rbtnupdatemarried.AutoSize = True
+        Me.rbtnupdatemarried.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnupdatemarried.Location = New System.Drawing.Point(156, 10)
+        Me.rbtnupdatemarried.Name = "rbtnupdatemarried"
+        Me.rbtnupdatemarried.Size = New System.Drawing.Size(83, 25)
+        Me.rbtnupdatemarried.TabIndex = 35
+        Me.rbtnupdatemarried.Text = "Married"
+        Me.rbtnupdatemarried.UseVisualStyleBackColor = True
+        '
+        'txtupdategender
+        '
+        Me.txtupdategender.Enabled = False
+        Me.txtupdategender.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdategender.FormattingEnabled = True
+        Me.txtupdategender.Items.AddRange(New Object() {"Male", "Female", "Other"})
+        Me.txtupdategender.Location = New System.Drawing.Point(528, 285)
+        Me.txtupdategender.Name = "txtupdategender"
+        Me.txtupdategender.Size = New System.Drawing.Size(312, 36)
+        Me.txtupdategender.TabIndex = 38
+        '
+        'txtupdatemaritalstat
+        '
+        Me.txtupdatemaritalstat.Enabled = False
+        Me.txtupdatemaritalstat.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatemaritalstat.FormattingEnabled = True
+        Me.txtupdatemaritalstat.Items.AddRange(New Object() {"Single ", "Married"})
+        Me.txtupdatemaritalstat.Location = New System.Drawing.Point(128, 508)
+        Me.txtupdatemaritalstat.Name = "txtupdatemaritalstat"
+        Me.txtupdatemaritalstat.Size = New System.Drawing.Size(312, 36)
+        Me.txtupdatemaritalstat.TabIndex = 37
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.Location = New System.Drawing.Point(530, 406)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(162, 20)
+        Me.Label37.TabIndex = 36
+        Me.Label37.Text = "Monthly Salary (GHC)"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(128, 479)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(107, 20)
+        Me.Label36.TabIndex = 35
+        Me.Label36.Text = "Marital Status"
+        '
+        'btnadmindeleteuser
+        '
+        Me.btnadmindeleteuser.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnadmindeleteuser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnadmindeleteuser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnadmindeleteuser.FlatAppearance.BorderSize = 0
+        Me.btnadmindeleteuser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnadmindeleteuser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnadmindeleteuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnadmindeleteuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadmindeleteuser.ForeColor = System.Drawing.Color.Red
+        Me.btnadmindeleteuser.Location = New System.Drawing.Point(130, 587)
+        Me.btnadmindeleteuser.Name = "btnadmindeleteuser"
+        Me.btnadmindeleteuser.Size = New System.Drawing.Size(148, 52)
+        Me.btnadmindeleteuser.TabIndex = 34
+        Me.btnadmindeleteuser.Text = "DELETE USER"
+        Me.btnadmindeleteuser.UseVisualStyleBackColor = False
+        '
+        'txtupdatesalary
+        '
+        Me.txtupdatesalary.Enabled = False
+        Me.txtupdatesalary.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatesalary.Location = New System.Drawing.Point(530, 441)
+        Me.txtupdatesalary.Name = "txtupdatesalary"
+        Me.txtupdatesalary.Size = New System.Drawing.Size(310, 35)
+        Me.txtupdatesalary.TabIndex = 33
+        '
+        'txtupdateretrieveorupdateid
+        '
+        Me.txtupdateretrieveorupdateid.Location = New System.Drawing.Point(501, 619)
+        Me.txtupdateretrieveorupdateid.Name = "txtupdateretrieveorupdateid"
+        Me.txtupdateretrieveorupdateid.Size = New System.Drawing.Size(33, 20)
+        Me.txtupdateretrieveorupdateid.TabIndex = 31
+        Me.txtupdateretrieveorupdateid.Visible = False
+        '
         'btneditorupdateor
         '
-        Me.btneditorupdateor.BackColor = System.Drawing.Color.PaleGreen
+        Me.btneditorupdateor.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btneditorupdateor.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btneditorupdateor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btneditorupdateor.FlatAppearance.BorderSize = 0
@@ -599,12 +781,12 @@ Partial Class DiCE
         Me.btneditorupdateor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btneditorupdateor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btneditorupdateor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btneditorupdateor.ForeColor = System.Drawing.Color.ForestGreen
-        Me.btneditorupdateor.Location = New System.Drawing.Point(411, 619)
+        Me.btneditorupdateor.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.btneditorupdateor.Location = New System.Drawing.Point(323, 587)
         Me.btneditorupdateor.Name = "btneditorupdateor"
-        Me.btneditorupdateor.Size = New System.Drawing.Size(119, 52)
+        Me.btneditorupdateor.Size = New System.Drawing.Size(148, 52)
         Me.btneditorupdateor.TabIndex = 30
-        Me.btneditorupdateor.Text = "EDIT"
+        Me.btneditorupdateor.Text = "EDIT INFO."
         Me.btneditorupdateor.UseVisualStyleBackColor = False
         '
         'chkbupdateactive
@@ -613,7 +795,7 @@ Partial Class DiCE
         Me.chkbupdateactive.Checked = True
         Me.chkbupdateactive.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkbupdateactive.Enabled = False
-        Me.chkbupdateactive.Location = New System.Drawing.Point(571, 579)
+        Me.chkbupdateactive.Location = New System.Drawing.Point(562, 530)
         Me.chkbupdateactive.Name = "chkbupdateactive"
         Me.chkbupdateactive.Size = New System.Drawing.Size(15, 14)
         Me.chkbupdateactive.TabIndex = 24
@@ -622,247 +804,229 @@ Partial Class DiCE
         'updatedatetimepicker
         '
         Me.updatedatetimepicker.Enabled = False
-        Me.updatedatetimepicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.updatedatetimepicker.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updatedatetimepicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.updatedatetimepicker.Location = New System.Drawing.Point(556, 470)
+        Me.updatedatetimepicker.Location = New System.Drawing.Point(530, 363)
         Me.updatedatetimepicker.Name = "updatedatetimepicker"
-        Me.updatedatetimepicker.Size = New System.Drawing.Size(310, 30)
+        Me.updatedatetimepicker.Size = New System.Drawing.Size(310, 35)
         Me.updatedatetimepicker.TabIndex = 23
         '
         'txtupdatefname
         '
         Me.txtupdatefname.Enabled = False
-        Me.txtupdatefname.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdatefname.Location = New System.Drawing.Point(556, 70)
+        Me.txtupdatefname.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatefname.Location = New System.Drawing.Point(531, 59)
         Me.txtupdatefname.Name = "txtupdatefname"
-        Me.txtupdatefname.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdatefname.Size = New System.Drawing.Size(310, 35)
         Me.txtupdatefname.TabIndex = 13
         '
         'txtupdatelname
         '
         Me.txtupdatelname.Enabled = False
-        Me.txtupdatelname.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdatelname.Location = New System.Drawing.Point(556, 170)
+        Me.txtupdatelname.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatelname.Location = New System.Drawing.Point(531, 131)
         Me.txtupdatelname.Name = "txtupdatelname"
-        Me.txtupdatelname.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdatelname.Size = New System.Drawing.Size(310, 35)
         Me.txtupdatelname.TabIndex = 15
         '
         'txtupdateonames
         '
         Me.txtupdateonames.Enabled = False
-        Me.txtupdateonames.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdateonames.Location = New System.Drawing.Point(556, 270)
+        Me.txtupdateonames.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdateonames.Location = New System.Drawing.Point(531, 215)
         Me.txtupdateonames.Name = "txtupdateonames"
-        Me.txtupdateonames.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdateonames.Size = New System.Drawing.Size(310, 35)
         Me.txtupdateonames.TabIndex = 17
-        '
-        'txtupdategender
-        '
-        Me.txtupdategender.Enabled = False
-        Me.txtupdategender.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdategender.Location = New System.Drawing.Point(556, 365)
-        Me.txtupdategender.Name = "txtupdategender"
-        Me.txtupdategender.Size = New System.Drawing.Size(310, 30)
-        Me.txtupdategender.TabIndex = 19
         '
         'txtupdateemail
         '
         Me.txtupdateemail.Enabled = False
-        Me.txtupdateemail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdateemail.Location = New System.Drawing.Point(47, 572)
+        Me.txtupdateemail.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdateemail.Location = New System.Drawing.Point(130, 438)
         Me.txtupdateemail.Name = "txtupdateemail"
-        Me.txtupdateemail.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdateemail.Size = New System.Drawing.Size(310, 35)
         Me.txtupdateemail.TabIndex = 22
         '
         'txtupdatepassword
         '
         Me.txtupdatepassword.Enabled = False
-        Me.txtupdatepassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdatepassword.Location = New System.Drawing.Point(44, 470)
+        Me.txtupdatepassword.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatepassword.Location = New System.Drawing.Point(132, 365)
         Me.txtupdatepassword.Name = "txtupdatepassword"
-        Me.txtupdatepassword.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdatepassword.Size = New System.Drawing.Size(310, 35)
         Me.txtupdatepassword.TabIndex = 20
         '
         'txtupdateusername
         '
         Me.txtupdateusername.Enabled = False
-        Me.txtupdateusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdateusername.Location = New System.Drawing.Point(44, 365)
+        Me.txtupdateusername.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdateusername.Location = New System.Drawing.Point(130, 289)
         Me.txtupdateusername.Name = "txtupdateusername"
-        Me.txtupdateusername.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdateusername.Size = New System.Drawing.Size(310, 35)
         Me.txtupdateusername.TabIndex = 18
         '
         'txtupdatenumber
         '
         Me.txtupdatenumber.Enabled = False
-        Me.txtupdatenumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdatenumber.Location = New System.Drawing.Point(44, 272)
+        Me.txtupdatenumber.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdatenumber.Location = New System.Drawing.Point(130, 215)
         Me.txtupdatenumber.Name = "txtupdatenumber"
-        Me.txtupdatenumber.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdatenumber.Size = New System.Drawing.Size(310, 35)
         Me.txtupdatenumber.TabIndex = 16
         '
         'txtupdaterole
         '
         Me.txtupdaterole.Enabled = False
-        Me.txtupdaterole.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdaterole.Location = New System.Drawing.Point(47, 170)
+        Me.txtupdaterole.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdaterole.Location = New System.Drawing.Point(130, 131)
         Me.txtupdaterole.Name = "txtupdaterole"
-        Me.txtupdaterole.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdaterole.Size = New System.Drawing.Size(310, 35)
         Me.txtupdaterole.TabIndex = 14
         '
         'txtupdateid
         '
         Me.txtupdateid.Enabled = False
-        Me.txtupdateid.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtupdateid.Location = New System.Drawing.Point(47, 70)
+        Me.txtupdateid.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtupdateid.Location = New System.Drawing.Point(130, 59)
         Me.txtupdateid.Name = "txtupdateid"
-        Me.txtupdateid.Size = New System.Drawing.Size(310, 30)
+        Me.txtupdateid.Size = New System.Drawing.Size(310, 35)
         Me.txtupdateid.TabIndex = 12
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(552, 525)
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(530, 487)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(73, 20)
+        Me.Label26.Size = New System.Drawing.Size(65, 20)
         Me.Label26.TabIndex = 11
         Me.Label26.Text = "Active ?"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(552, 419)
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(527, 335)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(85, 20)
+        Me.Label25.Size = New System.Drawing.Size(76, 20)
         Me.Label25.TabIndex = 10
         Me.Label25.Text = "Bith Date"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(552, 323)
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(526, 262)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(69, 20)
+        Me.Label24.Size = New System.Drawing.Size(63, 20)
         Me.Label24.TabIndex = 9
         Me.Label24.Text = "Gender"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(549, 222)
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(530, 177)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(114, 20)
+        Me.Label23.Size = New System.Drawing.Size(103, 20)
         Me.Label23.TabIndex = 8
         Me.Label23.Text = "Other Names"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(552, 117)
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(526, 104)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(95, 20)
+        Me.Label22.Size = New System.Drawing.Size(86, 20)
         Me.Label22.TabIndex = 7
         Me.Label22.Text = "Last Name"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(552, 38)
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(527, 36)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(96, 20)
+        Me.Label21.Size = New System.Drawing.Size(86, 20)
         Me.Label21.TabIndex = 6
         Me.Label21.Text = "First Name"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(43, 525)
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(128, 413)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(124, 20)
+        Me.Label20.Size = New System.Drawing.Size(111, 20)
         Me.Label20.TabIndex = 5
         Me.Label20.Text = "Email Address"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(43, 422)
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(126, 339)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(86, 20)
+        Me.Label19.Size = New System.Drawing.Size(78, 20)
         Me.Label19.TabIndex = 4
         Me.Label19.Text = "Password"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(40, 323)
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(128, 262)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(98, 20)
+        Me.Label18.Size = New System.Drawing.Size(89, 20)
         Me.Label18.TabIndex = 3
         Me.Label18.Text = "User Name"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(40, 222)
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(126, 177)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(128, 20)
+        Me.Label17.Size = New System.Drawing.Size(115, 20)
         Me.Label17.TabIndex = 2
         Me.Label17.Text = "Mobile Number"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(43, 133)
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(131, 104)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(46, 20)
+        Me.Label16.Size = New System.Drawing.Size(42, 20)
         Me.Label16.TabIndex = 1
         Me.Label16.Text = "Role"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(43, 38)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(128, 36)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(28, 20)
+        Me.Label15.Size = New System.Drawing.Size(26, 20)
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "ID"
         '
-        'numberretrievepanel
+        'numbersearchpanel
         '
-        Me.numberretrievepanel.Controls.Add(Me.txtretrieveid)
-        Me.numberretrievepanel.Controls.Add(Me.Label14)
-        Me.numberretrievepanel.Controls.Add(Me.btnretrieve)
-        Me.numberretrievepanel.Controls.Add(Me.txtretrievenumber)
-        Me.numberretrievepanel.Location = New System.Drawing.Point(41, 17)
-        Me.numberretrievepanel.Name = "numberretrievepanel"
-        Me.numberretrievepanel.Size = New System.Drawing.Size(263, 534)
-        Me.numberretrievepanel.TabIndex = 31
-        '
-        'txtretrieveid
-        '
-        Me.txtretrieveid.Location = New System.Drawing.Point(386, 427)
-        Me.txtretrieveid.Name = "txtretrieveid"
-        Me.txtretrieveid.Size = New System.Drawing.Size(21, 20)
-        Me.txtretrieveid.TabIndex = 31
-        Me.txtretrieveid.Visible = False
+        Me.numbersearchpanel.Controls.Add(Me.Label14)
+        Me.numbersearchpanel.Controls.Add(Me.btnretrieve)
+        Me.numbersearchpanel.Controls.Add(Me.txtretrievenumber)
+        Me.numbersearchpanel.Location = New System.Drawing.Point(32, 101)
+        Me.numbersearchpanel.Name = "numbersearchpanel"
+        Me.numbersearchpanel.Size = New System.Drawing.Size(199, 137)
+        Me.numbersearchpanel.TabIndex = 31
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(394, 199)
+        Me.Label14.Location = New System.Drawing.Point(392, 113)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(208, 25)
         Me.Label14.TabIndex = 30
@@ -879,7 +1043,7 @@ Partial Class DiCE
         Me.btnretrieve.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnretrieve.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnretrieve.ForeColor = System.Drawing.Color.ForestGreen
-        Me.btnretrieve.Location = New System.Drawing.Point(439, 397)
+        Me.btnretrieve.Location = New System.Drawing.Point(427, 268)
         Me.btnretrieve.Name = "btnretrieve"
         Me.btnretrieve.Size = New System.Drawing.Size(119, 52)
         Me.btnretrieve.TabIndex = 29
@@ -889,72 +1053,177 @@ Partial Class DiCE
         'txtretrievenumber
         '
         Me.txtretrievenumber.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtretrievenumber.Location = New System.Drawing.Point(348, 298)
+        Me.txtretrievenumber.Location = New System.Drawing.Point(339, 184)
         Me.txtretrievenumber.Name = "txtretrievenumber"
         Me.txtretrievenumber.Size = New System.Drawing.Size(305, 35)
         Me.txtretrievenumber.TabIndex = 28
         '
-        'deleteuserpanel
+        'adminuserlogspanel
         '
-        Me.deleteuserpanel.Location = New System.Drawing.Point(37, 233)
-        Me.deleteuserpanel.Name = "deleteuserpanel"
-        Me.deleteuserpanel.Size = New System.Drawing.Size(200, 100)
-        Me.deleteuserpanel.TabIndex = 0
+        Me.adminuserlogspanel.Location = New System.Drawing.Point(32, 244)
+        Me.adminuserlogspanel.Name = "adminuserlogspanel"
+        Me.adminuserlogspanel.Size = New System.Drawing.Size(208, 100)
+        Me.adminuserlogspanel.TabIndex = 0
         '
-        'userlogspanel
+        'adminorderstatspanel
         '
-        Me.userlogspanel.Location = New System.Drawing.Point(37, 339)
-        Me.userlogspanel.Name = "userlogspanel"
-        Me.userlogspanel.Size = New System.Drawing.Size(200, 100)
-        Me.userlogspanel.TabIndex = 0
+        Me.adminorderstatspanel.Location = New System.Drawing.Point(32, 368)
+        Me.adminorderstatspanel.Name = "adminorderstatspanel"
+        Me.adminorderstatspanel.Size = New System.Drawing.Size(200, 100)
+        Me.adminorderstatspanel.TabIndex = 1
         '
-        'adduserpanel
+        'adminadduserpanel
         '
-        Me.adduserpanel.Controls.Add(Me.Label13)
-        Me.adduserpanel.Controls.Add(Me.cmbusertype)
-        Me.adduserpanel.Controls.Add(Me.btnnewusersave)
-        Me.adduserpanel.Controls.Add(Me.chkbnewactive)
-        Me.adduserpanel.Controls.Add(Me.rbtnfemale)
-        Me.adduserpanel.Controls.Add(Me.rbtnmale)
-        Me.adduserpanel.Controls.Add(Me.txtnewDOB)
-        Me.adduserpanel.Controls.Add(Me.Label12)
-        Me.adduserpanel.Controls.Add(Me.Label11)
-        Me.adduserpanel.Controls.Add(Me.Label10)
-        Me.adduserpanel.Controls.Add(Me.Label9)
-        Me.adduserpanel.Controls.Add(Me.Label7)
-        Me.adduserpanel.Controls.Add(Me.Label6)
-        Me.adduserpanel.Controls.Add(Me.Label5)
-        Me.adduserpanel.Controls.Add(Me.Label4)
-        Me.adduserpanel.Controls.Add(Me.Label3)
-        Me.adduserpanel.Controls.Add(Me.txtnewemail)
-        Me.adduserpanel.Controls.Add(Me.txtnewnumber)
-        Me.adduserpanel.Controls.Add(Me.txtnewrole)
-        Me.adduserpanel.Controls.Add(Me.txtnewlname)
-        Me.adduserpanel.Controls.Add(Me.txtnewonames)
-        Me.adduserpanel.Controls.Add(Me.txtnewfname)
-        Me.adduserpanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.adduserpanel.Location = New System.Drawing.Point(37, 17)
-        Me.adduserpanel.Name = "adduserpanel"
-        Me.adduserpanel.Size = New System.Drawing.Size(200, 102)
-        Me.adduserpanel.TabIndex = 0
+        Me.adminadduserpanel.Controls.Add(Me.Panel3)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewmaritalstat)
+        Me.adminadduserpanel.Controls.Add(Me.Label35)
+        Me.adminadduserpanel.Controls.Add(Me.Label34)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewsalary)
+        Me.adminadduserpanel.Controls.Add(Me.Label13)
+        Me.adminadduserpanel.Controls.Add(Me.cmbusertype)
+        Me.adminadduserpanel.Controls.Add(Me.btnnewusersave)
+        Me.adminadduserpanel.Controls.Add(Me.chkbnewactive)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewDOB)
+        Me.adminadduserpanel.Controls.Add(Me.Label12)
+        Me.adminadduserpanel.Controls.Add(Me.Label11)
+        Me.adminadduserpanel.Controls.Add(Me.Label10)
+        Me.adminadduserpanel.Controls.Add(Me.Label9)
+        Me.adminadduserpanel.Controls.Add(Me.Label7)
+        Me.adminadduserpanel.Controls.Add(Me.Label6)
+        Me.adminadduserpanel.Controls.Add(Me.Label5)
+        Me.adminadduserpanel.Controls.Add(Me.Label4)
+        Me.adminadduserpanel.Controls.Add(Me.Label3)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewemail)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewnumber)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewrole)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewlname)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewonames)
+        Me.adminadduserpanel.Controls.Add(Me.txtnewfname)
+        Me.adminadduserpanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.adminadduserpanel.Location = New System.Drawing.Point(32, 25)
+        Me.adminadduserpanel.Name = "adminadduserpanel"
+        Me.adminadduserpanel.Size = New System.Drawing.Size(208, 93)
+        Me.adminadduserpanel.TabIndex = 0
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.rbtnmale)
+        Me.Panel3.Controls.Add(Me.rbtnfemale)
+        Me.Panel3.Location = New System.Drawing.Point(103, 469)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(305, 45)
+        Me.Panel3.TabIndex = 37
+        '
+        'rbtnmale
+        '
+        Me.rbtnmale.AutoSize = True
+        Me.rbtnmale.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnmale.Location = New System.Drawing.Point(25, 10)
+        Me.rbtnmale.Name = "rbtnmale"
+        Me.rbtnmale.Size = New System.Drawing.Size(62, 25)
+        Me.rbtnmale.TabIndex = 24
+        Me.rbtnmale.Text = "Male"
+        Me.rbtnmale.UseVisualStyleBackColor = True
+        '
+        'rbtnfemale
+        '
+        Me.rbtnfemale.AutoSize = True
+        Me.rbtnfemale.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnfemale.Location = New System.Drawing.Point(127, 10)
+        Me.rbtnfemale.Name = "rbtnfemale"
+        Me.rbtnfemale.Size = New System.Drawing.Size(78, 25)
+        Me.rbtnfemale.TabIndex = 25
+        Me.rbtnfemale.Text = "Female"
+        Me.rbtnfemale.UseVisualStyleBackColor = True
+        '
+        'txtnewmaritalstat
+        '
+        Me.txtnewmaritalstat.Controls.Add(Me.chkbmaritalstat)
+        Me.txtnewmaritalstat.Controls.Add(Me.rbtnsingle)
+        Me.txtnewmaritalstat.Controls.Add(Me.rbtnmarried)
+        Me.txtnewmaritalstat.Location = New System.Drawing.Point(530, 297)
+        Me.txtnewmaritalstat.Name = "txtnewmaritalstat"
+        Me.txtnewmaritalstat.Size = New System.Drawing.Size(306, 44)
+        Me.txtnewmaritalstat.TabIndex = 36
+        '
+        'chkbmaritalstat
+        '
+        Me.chkbmaritalstat.AutoSize = True
+        Me.chkbmaritalstat.Location = New System.Drawing.Point(275, 16)
+        Me.chkbmaritalstat.Name = "chkbmaritalstat"
+        Me.chkbmaritalstat.Size = New System.Drawing.Size(15, 14)
+        Me.chkbmaritalstat.TabIndex = 36
+        Me.chkbmaritalstat.UseVisualStyleBackColor = True
+        Me.chkbmaritalstat.Visible = False
+        '
+        'rbtnsingle
+        '
+        Me.rbtnsingle.AutoSize = True
+        Me.rbtnsingle.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnsingle.Location = New System.Drawing.Point(32, 10)
+        Me.rbtnsingle.Name = "rbtnsingle"
+        Me.rbtnsingle.Size = New System.Drawing.Size(71, 25)
+        Me.rbtnsingle.TabIndex = 34
+        Me.rbtnsingle.Text = "Single"
+        Me.rbtnsingle.UseVisualStyleBackColor = True
+        '
+        'rbtnmarried
+        '
+        Me.rbtnmarried.AutoSize = True
+        Me.rbtnmarried.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnmarried.Location = New System.Drawing.Point(156, 10)
+        Me.rbtnmarried.Name = "rbtnmarried"
+        Me.rbtnmarried.Size = New System.Drawing.Size(83, 25)
+        Me.rbtnmarried.TabIndex = 35
+        Me.rbtnmarried.Text = "Married"
+        Me.rbtnmarried.UseVisualStyleBackColor = True
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Location = New System.Drawing.Point(526, 351)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(162, 20)
+        Me.Label35.TabIndex = 33
+        Me.Label35.Text = "Monthly Salary (GHC)"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(526, 268)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(107, 20)
+        Me.Label34.TabIndex = 32
+        Me.Label34.Text = "Marital Status"
+        '
+        'txtnewsalary
+        '
+        Me.txtnewsalary.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnewsalary.Location = New System.Drawing.Point(530, 380)
+        Me.txtnewsalary.Name = "txtnewsalary"
+        Me.txtnewsalary.Size = New System.Drawing.Size(305, 35)
+        Me.txtnewsalary.TabIndex = 31
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(711, 419)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(526, 190)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(109, 20)
+        Me.Label13.Size = New System.Drawing.Size(69, 20)
         Me.Label13.TabIndex = 29
-        Me.Label13.Text = "Sign Up As :"
+        Me.Label13.Text = "Position "
         '
         'cmbusertype
         '
+        Me.cmbusertype.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbusertype.FormattingEnabled = True
         Me.cmbusertype.Items.AddRange(New Object() {"Waiter/Waitress", "Chef/Cook", "Manager/Supervisor", "Administrator"})
-        Me.cmbusertype.Location = New System.Drawing.Point(714, 477)
+        Me.cmbusertype.Location = New System.Drawing.Point(530, 222)
         Me.cmbusertype.Name = "cmbusertype"
-        Me.cmbusertype.Size = New System.Drawing.Size(205, 33)
+        Me.cmbusertype.Size = New System.Drawing.Size(305, 36)
         Me.cmbusertype.TabIndex = 28
         '
         'btnnewusersave
@@ -968,11 +1237,11 @@ Partial Class DiCE
         Me.btnnewusersave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnnewusersave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnewusersave.ForeColor = System.Drawing.Color.ForestGreen
-        Me.btnnewusersave.Location = New System.Drawing.Point(402, 587)
+        Me.btnnewusersave.Location = New System.Drawing.Point(384, 546)
         Me.btnnewusersave.Name = "btnnewusersave"
-        Me.btnnewusersave.Size = New System.Drawing.Size(119, 52)
+        Me.btnnewusersave.Size = New System.Drawing.Size(156, 52)
         Me.btnnewusersave.TabIndex = 27
-        Me.btnnewusersave.Text = "SAVE"
+        Me.btnnewusersave.Text = "ADD USER"
         Me.btnnewusersave.UseVisualStyleBackColor = False
         '
         'chkbnewactive
@@ -982,40 +1251,18 @@ Partial Class DiCE
         Me.chkbnewactive.Checked = True
         Me.chkbnewactive.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkbnewactive.Font = New System.Drawing.Font("Ebrima", 8.25!)
-        Me.chkbnewactive.Location = New System.Drawing.Point(985, 483)
+        Me.chkbnewactive.Location = New System.Drawing.Point(553, 477)
         Me.chkbnewactive.Name = "chkbnewactive"
         Me.chkbnewactive.Size = New System.Drawing.Size(15, 14)
         Me.chkbnewactive.TabIndex = 26
         Me.chkbnewactive.UseVisualStyleBackColor = True
-        '
-        'rbtnfemale
-        '
-        Me.rbtnfemale.AutoSize = True
-        Me.rbtnfemale.Location = New System.Drawing.Point(181, 484)
-        Me.rbtnfemale.Name = "rbtnfemale"
-        Me.rbtnfemale.Size = New System.Drawing.Size(95, 29)
-        Me.rbtnfemale.TabIndex = 25
-        Me.rbtnfemale.TabStop = True
-        Me.rbtnfemale.Text = "Female"
-        Me.rbtnfemale.UseVisualStyleBackColor = True
-        '
-        'rbtnmale
-        '
-        Me.rbtnmale.AutoSize = True
-        Me.rbtnmale.Location = New System.Drawing.Point(28, 484)
-        Me.rbtnmale.Name = "rbtnmale"
-        Me.rbtnmale.Size = New System.Drawing.Size(73, 29)
-        Me.rbtnmale.TabIndex = 24
-        Me.rbtnmale.TabStop = True
-        Me.rbtnmale.Text = "Male"
-        Me.rbtnmale.UseVisualStyleBackColor = True
         '
         'txtnewDOB
         '
         Me.txtnewDOB.CalendarFont = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnewDOB.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnewDOB.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtnewDOB.Location = New System.Drawing.Point(373, 478)
+        Me.txtnewDOB.Location = New System.Drawing.Point(530, 141)
         Me.txtnewDOB.Name = "txtnewDOB"
         Me.txtnewDOB.Size = New System.Drawing.Size(304, 35)
         Me.txtnewDOB.TabIndex = 23
@@ -1023,97 +1270,97 @@ Partial Class DiCE
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(946, 426)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(526, 434)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 20)
+        Me.Label12.Size = New System.Drawing.Size(65, 20)
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "Active ?"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(370, 426)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(526, 116)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(115, 20)
+        Me.Label11.Size = New System.Drawing.Size(102, 20)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Date Of Birth"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(25, 426)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(106, 425)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(69, 20)
+        Me.Label10.Size = New System.Drawing.Size(63, 20)
         Me.Label10.TabIndex = 20
         Me.Label10.Text = "Gender"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(711, 265)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(526, 38)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(124, 20)
+        Me.Label9.Size = New System.Drawing.Size(111, 20)
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Email Address"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(370, 265)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(101, 351)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(184, 20)
+        Me.Label7.Size = New System.Drawing.Size(165, 20)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Mobile Phone Number"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(26, 265)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(101, 268)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(139, 20)
+        Me.Label6.Size = New System.Drawing.Size(42, 20)
         Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Role Or Position"
+        Me.Label6.Text = "Role"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(711, 63)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(99, 190)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 20)
+        Me.Label5.Size = New System.Drawing.Size(86, 20)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Last Name"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(370, 63)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(99, 116)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 20)
+        Me.Label4.Size = New System.Drawing.Size(113, 20)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Other Name(s)"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(25, 63)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(99, 36)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 20)
+        Me.Label3.Size = New System.Drawing.Size(86, 20)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "First Name"
         '
         'txtnewemail
         '
         Me.txtnewemail.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewemail.Location = New System.Drawing.Point(714, 312)
+        Me.txtnewemail.Location = New System.Drawing.Point(530, 67)
         Me.txtnewemail.Name = "txtnewemail"
         Me.txtnewemail.Size = New System.Drawing.Size(305, 35)
         Me.txtnewemail.TabIndex = 10
@@ -1121,7 +1368,7 @@ Partial Class DiCE
         'txtnewnumber
         '
         Me.txtnewnumber.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewnumber.Location = New System.Drawing.Point(373, 312)
+        Me.txtnewnumber.Location = New System.Drawing.Point(105, 380)
         Me.txtnewnumber.Name = "txtnewnumber"
         Me.txtnewnumber.Size = New System.Drawing.Size(305, 35)
         Me.txtnewnumber.TabIndex = 9
@@ -1129,7 +1376,7 @@ Partial Class DiCE
         'txtnewrole
         '
         Me.txtnewrole.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewrole.Location = New System.Drawing.Point(28, 312)
+        Me.txtnewrole.Location = New System.Drawing.Point(105, 299)
         Me.txtnewrole.Name = "txtnewrole"
         Me.txtnewrole.Size = New System.Drawing.Size(305, 35)
         Me.txtnewrole.TabIndex = 8
@@ -1137,7 +1384,7 @@ Partial Class DiCE
         'txtnewlname
         '
         Me.txtnewlname.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewlname.Location = New System.Drawing.Point(714, 116)
+        Me.txtnewlname.Location = New System.Drawing.Point(103, 222)
         Me.txtnewlname.Name = "txtnewlname"
         Me.txtnewlname.Size = New System.Drawing.Size(305, 35)
         Me.txtnewlname.TabIndex = 7
@@ -1145,7 +1392,7 @@ Partial Class DiCE
         'txtnewonames
         '
         Me.txtnewonames.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewonames.Location = New System.Drawing.Point(373, 116)
+        Me.txtnewonames.Location = New System.Drawing.Point(103, 143)
         Me.txtnewonames.Name = "txtnewonames"
         Me.txtnewonames.Size = New System.Drawing.Size(305, 35)
         Me.txtnewonames.TabIndex = 6
@@ -1153,73 +1400,52 @@ Partial Class DiCE
         'txtnewfname
         '
         Me.txtnewfname.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewfname.Location = New System.Drawing.Point(28, 116)
+        Me.txtnewfname.Location = New System.Drawing.Point(103, 67)
         Me.txtnewfname.Name = "txtnewfname"
         Me.txtnewfname.Size = New System.Drawing.Size(305, 35)
         Me.txtnewfname.TabIndex = 5
         '
-        'orderstatspanel
+        'tabadminviewuserlogs
         '
-        Me.orderstatspanel.Location = New System.Drawing.Point(37, 445)
-        Me.orderstatspanel.Name = "orderstatspanel"
-        Me.orderstatspanel.Size = New System.Drawing.Size(200, 100)
-        Me.orderstatspanel.TabIndex = 1
+        Me.tabadminviewuserlogs.BackColor = System.Drawing.Color.LightCyan
+        Me.tabadminviewuserlogs.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.tabadminviewuserlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.tabadminviewuserlogs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tabadminviewuserlogs.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.tabadminviewuserlogs.Location = New System.Drawing.Point(49, 314)
+        Me.tabadminviewuserlogs.Name = "tabadminviewuserlogs"
+        Me.tabadminviewuserlogs.Size = New System.Drawing.Size(171, 52)
+        Me.tabadminviewuserlogs.TabIndex = 5
+        Me.tabadminviewuserlogs.Text = "VIEW USER LOGS"
+        Me.tabadminviewuserlogs.UseVisualStyleBackColor = False
         '
-        'btnviewuserlogs
+        'tabadminsearchuser
         '
-        Me.btnviewuserlogs.BackColor = System.Drawing.Color.LightCyan
-        Me.btnviewuserlogs.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnviewuserlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnviewuserlogs.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnviewuserlogs.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btnviewuserlogs.Location = New System.Drawing.Point(49, 323)
-        Me.btnviewuserlogs.Name = "btnviewuserlogs"
-        Me.btnviewuserlogs.Size = New System.Drawing.Size(171, 52)
-        Me.btnviewuserlogs.TabIndex = 5
-        Me.btnviewuserlogs.Text = "VIEW USER LOGS"
-        Me.btnviewuserlogs.UseVisualStyleBackColor = False
+        Me.tabadminsearchuser.BackColor = System.Drawing.Color.LightCyan
+        Me.tabadminsearchuser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.tabadminsearchuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.tabadminsearchuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tabadminsearchuser.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.tabadminsearchuser.Location = New System.Drawing.Point(49, 148)
+        Me.tabadminsearchuser.Name = "tabadminsearchuser"
+        Me.tabadminsearchuser.Size = New System.Drawing.Size(171, 52)
+        Me.tabadminsearchuser.TabIndex = 3
+        Me.tabadminsearchuser.Text = "SEARCH USER"
+        Me.tabadminsearchuser.UseVisualStyleBackColor = False
         '
-        'btndeleteuser
+        'tabadminadduser
         '
-        Me.btndeleteuser.BackColor = System.Drawing.Color.LightCyan
-        Me.btndeleteuser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btndeleteuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btndeleteuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btndeleteuser.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btndeleteuser.Location = New System.Drawing.Point(49, 235)
-        Me.btndeleteuser.Name = "btndeleteuser"
-        Me.btndeleteuser.Size = New System.Drawing.Size(171, 52)
-        Me.btndeleteuser.TabIndex = 4
-        Me.btndeleteuser.Text = "DELETE USER"
-        Me.btndeleteuser.UseVisualStyleBackColor = False
-        '
-        'btnupdateinfo
-        '
-        Me.btnupdateinfo.BackColor = System.Drawing.Color.LightCyan
-        Me.btnupdateinfo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnupdateinfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnupdateinfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnupdateinfo.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btnupdateinfo.Location = New System.Drawing.Point(49, 148)
-        Me.btnupdateinfo.Name = "btnupdateinfo"
-        Me.btnupdateinfo.Size = New System.Drawing.Size(171, 52)
-        Me.btnupdateinfo.TabIndex = 3
-        Me.btnupdateinfo.Text = "RETRIEVE USER INFO"
-        Me.btnupdateinfo.UseVisualStyleBackColor = False
-        '
-        'btnadduser
-        '
-        Me.btnadduser.BackColor = System.Drawing.Color.LightCyan
-        Me.btnadduser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnadduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnadduser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnadduser.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.btnadduser.Location = New System.Drawing.Point(49, 53)
-        Me.btnadduser.Name = "btnadduser"
-        Me.btnadduser.Size = New System.Drawing.Size(171, 52)
-        Me.btnadduser.TabIndex = 2
-        Me.btnadduser.Text = "ADD NEW USER"
-        Me.btnadduser.UseVisualStyleBackColor = False
+        Me.tabadminadduser.BackColor = System.Drawing.Color.LightCyan
+        Me.tabadminadduser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.tabadminadduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.tabadminadduser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tabadminadduser.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.tabadminadduser.Location = New System.Drawing.Point(49, 53)
+        Me.tabadminadduser.Name = "tabadminadduser"
+        Me.tabadminadduser.Size = New System.Drawing.Size(171, 52)
+        Me.tabadminadduser.TabIndex = 2
+        Me.tabadminadduser.Text = "ADD NEW USER"
+        Me.tabadminadduser.UseVisualStyleBackColor = False
         '
         'waiterpanel
         '
@@ -1230,7 +1456,7 @@ Partial Class DiCE
         Me.waiterpanel.Controls.Add(Me.GroupBox2)
         Me.waiterpanel.Location = New System.Drawing.Point(28, 25)
         Me.waiterpanel.Name = "waiterpanel"
-        Me.waiterpanel.Size = New System.Drawing.Size(257, 198)
+        Me.waiterpanel.Size = New System.Drawing.Size(257, 185)
         Me.waiterpanel.TabIndex = 2
         '
         'Button8
@@ -1305,6 +1531,7 @@ Partial Class DiCE
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.FoodsDataGridView)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1314,6 +1541,14 @@ Partial Class DiCE
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Foods"
+        '
+        'FoodsDataGridView
+        '
+        Me.FoodsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.FoodsDataGridView.Location = New System.Drawing.Point(6, 25)
+        Me.FoodsDataGridView.Name = "FoodsDataGridView"
+        Me.FoodsDataGridView.Size = New System.Drawing.Size(357, 401)
+        Me.FoodsDataGridView.TabIndex = 3
         '
         'Button3
         '
@@ -1387,8 +1622,8 @@ Partial Class DiCE
         Me.userspanel.Controls.Add(Me.btnlogout)
         Me.userspanel.Controls.Add(Me.adminpanel)
         Me.userspanel.Controls.Add(Me.waiterpanel)
-        Me.userspanel.Controls.Add(Me.chefpanel)
         Me.userspanel.Controls.Add(Me.managerpanel)
+        Me.userspanel.Controls.Add(Me.chefpanel)
         Me.userspanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.userspanel.Location = New System.Drawing.Point(0, 0)
         Me.userspanel.Name = "userspanel"
@@ -1441,8 +1676,8 @@ Partial Class DiCE
         Me.signuppanel.Controls.Add(Me.btnsignupsave)
         Me.signuppanel.Controls.Add(Me.Label29)
         Me.signuppanel.Controls.Add(Me.txtsignupusername)
-        Me.signuppanel.Controls.Add(Me.txtre)
-        Me.signuppanel.Controls.Add(Me.txtsignupreenterpassword)
+        Me.signuppanel.Controls.Add(Me.lblocnfirmpassword)
+        Me.signuppanel.Controls.Add(Me.txtsignupconfirmpassword)
         Me.signuppanel.Controls.Add(Me.btnsignupeligibilityupdate)
         Me.signuppanel.Controls.Add(Me.Label27)
         Me.signuppanel.Controls.Add(Me.txtsignupid)
@@ -1586,25 +1821,25 @@ Partial Class DiCE
         Me.txtsignupusername.Size = New System.Drawing.Size(305, 35)
         Me.txtsignupusername.TabIndex = 10
         '
-        'txtre
+        'lblocnfirmpassword
         '
-        Me.txtre.AutoSize = True
-        Me.txtre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtre.Location = New System.Drawing.Point(930, 394)
-        Me.txtre.Name = "txtre"
-        Me.txtre.Size = New System.Drawing.Size(182, 20)
-        Me.txtre.TabIndex = 11
-        Me.txtre.Text = "Re-Enter New Password"
+        Me.lblocnfirmpassword.AutoSize = True
+        Me.lblocnfirmpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblocnfirmpassword.Location = New System.Drawing.Point(930, 394)
+        Me.lblocnfirmpassword.Name = "lblocnfirmpassword"
+        Me.lblocnfirmpassword.Size = New System.Drawing.Size(172, 20)
+        Me.lblocnfirmpassword.TabIndex = 11
+        Me.lblocnfirmpassword.Text = "Confirm New Password"
         '
-        'txtsignupreenterpassword
+        'txtsignupconfirmpassword
         '
-        Me.txtsignupreenterpassword.Enabled = False
-        Me.txtsignupreenterpassword.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtsignupreenterpassword.Location = New System.Drawing.Point(934, 449)
-        Me.txtsignupreenterpassword.Name = "txtsignupreenterpassword"
-        Me.txtsignupreenterpassword.Size = New System.Drawing.Size(305, 35)
-        Me.txtsignupreenterpassword.TabIndex = 12
-        Me.txtsignupreenterpassword.UseSystemPasswordChar = True
+        Me.txtsignupconfirmpassword.Enabled = False
+        Me.txtsignupconfirmpassword.Font = New System.Drawing.Font("Ebrima", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtsignupconfirmpassword.Location = New System.Drawing.Point(934, 449)
+        Me.txtsignupconfirmpassword.Name = "txtsignupconfirmpassword"
+        Me.txtsignupconfirmpassword.Size = New System.Drawing.Size(305, 35)
+        Me.txtsignupconfirmpassword.TabIndex = 12
+        Me.txtsignupconfirmpassword.UseSystemPasswordChar = True
         '
         'btnsignupeligibilityupdate
         '
@@ -1680,20 +1915,13 @@ Partial Class DiCE
         Me.lblsignupmobilenumber.TabIndex = 2
         Me.lblsignupmobilenumber.Text = "Enter Mobile Number"
         '
-        'txtupdateretrieveorupdateid
-        '
-        Me.txtupdateretrieveorupdateid.Location = New System.Drawing.Point(553, 648)
-        Me.txtupdateretrieveorupdateid.Name = "txtupdateretrieveorupdateid"
-        Me.txtupdateretrieveorupdateid.Size = New System.Drawing.Size(33, 20)
-        Me.txtupdateretrieveorupdateid.TabIndex = 31
-        Me.txtupdateretrieveorupdateid.Visible = False
-        '
         'DiCE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.AutoSize = True
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1350, 731)
         Me.Controls.Add(Me.btnpopup)
         Me.Controls.Add(Me.Panel1)
@@ -1714,16 +1942,25 @@ Partial Class DiCE
         Me.loginpanel.PerformLayout()
         Me.adminpanel.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
-        Me.updateuserpanel.ResumeLayout(False)
+        Me.adminsearchuserpanel.ResumeLayout(False)
         Me.updatepanel.ResumeLayout(False)
         Me.updatepanel.PerformLayout()
-        Me.numberretrievepanel.ResumeLayout(False)
-        Me.numberretrievepanel.PerformLayout()
-        Me.adduserpanel.ResumeLayout(False)
-        Me.adduserpanel.PerformLayout()
+        Me.genderpanel.ResumeLayout(False)
+        Me.genderpanel.PerformLayout()
+        Me.maritalstatpanel.ResumeLayout(False)
+        Me.maritalstatpanel.PerformLayout()
+        Me.numbersearchpanel.ResumeLayout(False)
+        Me.numbersearchpanel.PerformLayout()
+        Me.adminadduserpanel.ResumeLayout(False)
+        Me.adminadduserpanel.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.txtnewmaritalstat.ResumeLayout(False)
+        Me.txtnewmaritalstat.PerformLayout()
         Me.waiterpanel.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.FoodsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.userspanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
@@ -1742,7 +1979,6 @@ Partial Class DiCE
     Friend WithEvents lbldate As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents lbltime As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents menubar As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HELPToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1785,16 +2021,14 @@ Partial Class DiCE
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents btnviewuserlogs As System.Windows.Forms.Button
-    Friend WithEvents btndeleteuser As System.Windows.Forms.Button
-    Friend WithEvents btnupdateinfo As System.Windows.Forms.Button
-    Friend WithEvents btnadduser As System.Windows.Forms.Button
+    Friend WithEvents tabadminviewuserlogs As System.Windows.Forms.Button
+    Friend WithEvents tabadminsearchuser As System.Windows.Forms.Button
+    Friend WithEvents tabadminadduser As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents updateuserpanel As System.Windows.Forms.Panel
-    Friend WithEvents deleteuserpanel As System.Windows.Forms.Panel
-    Friend WithEvents userlogspanel As System.Windows.Forms.Panel
-    Friend WithEvents adduserpanel As System.Windows.Forms.Panel
+    Friend WithEvents adminsearchuserpanel As System.Windows.Forms.Panel
+    Friend WithEvents adminuserlogspanel As System.Windows.Forms.Panel
+    Friend WithEvents adminadduserpanel As System.Windows.Forms.Panel
     Friend WithEvents chkbnewactive As System.Windows.Forms.CheckBox
     Friend WithEvents rbtnfemale As System.Windows.Forms.RadioButton
     Friend WithEvents rbtnmale As System.Windows.Forms.RadioButton
@@ -1818,42 +2052,15 @@ Partial Class DiCE
     Friend WithEvents cmbusertype As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents btnsignup As System.Windows.Forms.Button
-    Friend WithEvents btnorderstats As System.Windows.Forms.Button
-    Friend WithEvents orderstatspanel As System.Windows.Forms.Panel
-    Friend WithEvents numberretrievepanel As System.Windows.Forms.Panel
+    Friend WithEvents tabadminorderstats As System.Windows.Forms.Button
+    Friend WithEvents adminorderstatspanel As System.Windows.Forms.Panel
+    Friend WithEvents numbersearchpanel As System.Windows.Forms.Panel
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents txtretrievenumber As System.Windows.Forms.TextBox
-    Friend WithEvents updatepanel As System.Windows.Forms.Panel
-    Friend WithEvents txtupdatefname As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdatelname As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdateonames As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdateemail As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdatepassword As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdateusername As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdatenumber As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdaterole As System.Windows.Forms.TextBox
-    Friend WithEvents txtupdateid As System.Windows.Forms.TextBox
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents chkbupdateactive As System.Windows.Forms.CheckBox
-    Friend WithEvents updatedatetimepicker As System.Windows.Forms.DateTimePicker
-    Friend WithEvents txtupdategender As System.Windows.Forms.TextBox
-    Friend WithEvents btneditorupdateor As System.Windows.Forms.Button
     Friend WithEvents btnretrieve As System.Windows.Forms.Button
-    Friend WithEvents txtretrieveid As System.Windows.Forms.TextBox
     Friend WithEvents signuppanel As Panel
-    Friend WithEvents txtre As Label
-    Friend WithEvents txtsignupreenterpassword As TextBox
+    Friend WithEvents lblocnfirmpassword As Label
+    Friend WithEvents txtsignupconfirmpassword As TextBox
     Friend WithEvents btnsignupeligibilityupdate As Button
     Friend WithEvents Label27 As Label
     Friend WithEvents txtsignupid As TextBox
@@ -1873,5 +2080,53 @@ Partial Class DiCE
     Friend WithEvents lblsignupemail As Label
     Friend WithEvents txtsignupemail As TextBox
     Friend WithEvents btntologin As Button
+    Friend WithEvents menubar As MenuStrip
+    Friend WithEvents FoodsDataGridView As DataGridView
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents txtnewsalary As TextBox
+    Friend WithEvents updatepanel As Panel
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents btnadmindeleteuser As Button
+    Friend WithEvents txtupdatesalary As TextBox
     Friend WithEvents txtupdateretrieveorupdateid As TextBox
+    Friend WithEvents btneditorupdateor As Button
+    Friend WithEvents chkbupdateactive As CheckBox
+    Friend WithEvents updatedatetimepicker As DateTimePicker
+    Friend WithEvents txtupdatefname As TextBox
+    Friend WithEvents txtupdatelname As TextBox
+    Friend WithEvents txtupdateonames As TextBox
+    Friend WithEvents txtupdateemail As TextBox
+    Friend WithEvents txtupdatepassword As TextBox
+    Friend WithEvents txtupdateusername As TextBox
+    Friend WithEvents txtupdatenumber As TextBox
+    Friend WithEvents txtupdaterole As TextBox
+    Friend WithEvents txtupdateid As TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtupdategender As ComboBox
+    Friend WithEvents txtupdatemaritalstat As ComboBox
+    Friend WithEvents rbtnmarried As RadioButton
+    Friend WithEvents rbtnsingle As RadioButton
+    Friend WithEvents txtnewmaritalstat As Panel
+    Friend WithEvents chkbmaritalstat As CheckBox
+    Friend WithEvents genderpanel As Panel
+    Friend WithEvents rbtnupdatemale As RadioButton
+    Friend WithEvents rbtnupdatefemale As RadioButton
+    Friend WithEvents maritalstatpanel As Panel
+    Friend WithEvents chkbupdatemaritalstat As CheckBox
+    Friend WithEvents rbtnupdatesingle As RadioButton
+    Friend WithEvents rbtnupdatemarried As RadioButton
+    Friend WithEvents Panel3 As Panel
 End Class
