@@ -1,28 +1,51 @@
 ﻿Imports System.Data.OleDb
 Imports System.Windows.Forms.DockStyle
+Imports System.Windows.Forms.DataGridViewImageColumn
 Public Class DiCE
-    Dim con As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCEDatabase.accdb"
+    ReadOnly con As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCEDatabase.accdb"
     Dim ds As New DataSet
     Dim da As OleDbDataAdapter
-    Dim SQLstmtUW, SQLstmtUC, SQLstmtUM, SQLstmtUA As String
-    Dim Retrieve As Integer
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles systemtime.Tick
+    Dim SQLstmtUA As String
+    Dim countdown As Integer
+    Dim invalidcount As Integer = 0
+    Private Sub systemtime_Tick(sender As Object, e As EventArgs) Handles systemtime.Tick
         lbldate.Text = Date.Now.ToShortDateString
         lbltime.Text = TimeOfDay
     End Sub
+    'HIDES THE POPUP WHEN CLICKED
+    Private Sub btnpopup_Click(sender As Object, e As EventArgs) Handles btnpopup.Click
+        btnpopup.Hide()
+    End Sub
+    'TIMER FOR POP UP
+    Private Sub buttonhidetimer_Tick(sender As Object, e As EventArgs) Handles buttonhidetimer.Tick
+        btnpopup.Hide()
+    End Sub
+    'CALL WHEN NEW USER RECORDS SAVE SUCCESSFULY
+    Private Sub invalidlogintimer_Tick(sender As Object, e As EventArgs) Handles invalidlogintimer.Tick
+        countdown -= 1
+        lblinvalidmessage.Visible = False
+        btnlogin.Visible = True
+        btnsignup.Visible = True
+        txtloginpassword.Enabled = True
+        txtloginusername.Enabled = True
+    End Sub
     Private Sub FormDiCE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnlogout.Hide()
-        Timer1_Tick(sender, e)
+        systemtime_Tick(sender, e)
         userspanel.Hide()
-        txtpassword.Clear()
-        txtusername.Clear()
-        txtusername.Focus()
+        'txtloginpassword.Clear()
+        'txtloginusername.Clear()
+        'txtloginusername.Focus()
+        loginpanel.Visible = True
         loginpanel.Dock = Fill
         lbluser.Text = "User"
         lblrole.Text = "role"
+        txtloginpassword.Text = "welcome"
+        txtloginusername.Text = "TheodoreW"
+        btnlogin.Focus()
     End Sub
     'DISABLING SYMBOLS AND SPACE IN THE USERNAME TEXTBOX
-    Private Sub txtusername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtusername.KeyPress
+    Private Sub txtusername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtloginusername.KeyPress
         If Char.IsLetterOrDigit(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
             e.Handled = False
         Else
@@ -42,20 +65,21 @@ Public Class DiCE
     End Sub
     'THE LOGIN PROCESS
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
-        If txtpassword.Text <> "" And txtusername.Text <> "" Then
+        If txtloginpassword.Text <> "" And txtloginusername.Text <> "" Then
             Try
-                Dim LoginSQLStmt As String = "Select * from User_Login where User_Name = '" & txtusername.Text & "' and Password = '" & txtpassword.Text & "'"
+                Dim LoginSQLStmt As String = "Select * from User_Login where User_Name = '" & txtloginusername.Text & "' and Password = '" & txtloginpassword.Text & "'"
                 Dim myLoginCon As New OleDbConnection(con)
                 Dim myLoginCmd As New OleDbCommand(LoginSQLStmt, myLoginCon)
                 myLoginCmd.Connection.Open()
                 Dim myLoginRead As OleDbDataReader = myLoginCmd.ExecuteReader(CommandBehavior.CloseConnection)
                 If myLoginRead.Read() And myLoginRead.HasRows Then
-                    If StrComp(txtusername.Text, myLoginRead.Item("User_Name").ToString, CompareMethod.Binary) _
-                       Or StrComp(txtpassword.Text, myLoginRead.Item("Password").ToString(), CompareMethod.Binary) Then
+                    If StrComp(txtloginusername.Text, myLoginRead.Item("User_Name").ToString, CompareMethod.Binary) _
+                       And StrComp(txtloginpassword.Text, myLoginRead.Item("Password").ToString(), CompareMethod.Binary) Then
                         invalid()
                     Else
                         If myLoginRead.Item("Position") = "Administrator" And myLoginRead.Item("Active").ToString = True Then
                             lblrole.Text = myLoginRead.Item("Role").ToString
+                            lbluser.Text = myLoginRead.Item("First_Name") + " " + myLoginRead.Item("Other_Name(s)") + " " + myLoginRead.Item("Last_Name")
                             adminpanel.Dock = Fill
                             adminpanel.Show()
                             LogInProcess()
@@ -65,6 +89,7 @@ Public Class DiCE
                             tabadminadduser_Click(sender, e)
                         ElseIf myLoginRead.Item("Position") = "Chef/Cook" And myLoginRead.Item("Active").ToString = True Then
                             lblrole.Text = myLoginRead.Item("Role").ToString
+                            lbluser.Text = myLoginRead.Item("First_Name") + " " + myLoginRead.Item("Other_Name(s)") + " " + myLoginRead.Item("Last_Name")
                             chefpanel.Dock = Fill
                             chefpanel.Show()
                             adminpanel.Hide()
@@ -73,6 +98,7 @@ Public Class DiCE
                             LogInProcess()
                         ElseIf myLoginRead.Item("Position") = "Manager/supervisor" And myLoginRead.Item("Active").ToString = True Then
                             lblrole.Text = myLoginRead.Item("Role").ToString
+                            lbluser.Text = myLoginRead.Item("First_Name") + " " + myLoginRead.Item("Other_Name(s)") + " " + myLoginRead.Item("Last_Name")
                             managerpanel.Dock = Fill
                             managerpanel.Show()
                             adminpanel.Hide()
@@ -81,43 +107,48 @@ Public Class DiCE
                             LogInProcess()
                         ElseIf myLoginRead.Item("Position") = "Waiter/Waitress" And myLoginRead.Item("Active").ToString = True Then
                             lblrole.Text = myLoginRead.Item("Role").ToString
+                            lbluser.Text = myLoginRead.Item("First_Name") + " " + myLoginRead.Item("Other_Name(s)") + " " + myLoginRead.Item("Last_Name")
                             waiterpanel.Dock = Fill
                             waiterpanel.Show()
                             adminpanel.Hide()
                             chefpanel.Hide()
                             managerpanel.Hide()
                             LogInProcess()
-                            waiterlogin()
+                            tabwaiterfoods_Click(sender, e)
+                            'waiterlogin()
+
                         Else
                             MsgBox("User has been Deactivated contact Administrator for Reactivation", MsgBoxStyle.Information, "Access Denied")
                         End If
                     End If
                     myLoginCon.Close()
+                Else
+                    invalid()
                 End If
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
-        ElseIf txtusername.Text = "" And txtpassword.Text = "" Then
+        ElseIf txtloginusername.Text = "" And txtloginpassword.Text = "" Then
             btnpopup.BackColor = Color.LightCoral
             btnpopup.ForeColor = Color.Linen
             btnpopup.Text = "User Name and Password Fields are Empty"
             btnpopup.Show()
             PopOut()
-            txtusername.Focus()
-        ElseIf txtusername.Text = "" Then
+            txtloginusername.Focus()
+        ElseIf txtloginusername.Text = "" Then
             btnpopup.BackColor = Color.LightCoral
             btnpopup.ForeColor = Color.Linen
             btnpopup.Text = "The User Name Field is Empty "
             btnpopup.Show()
             PopOut()
-            txtusername.Focus()
-        ElseIf txtpassword.Text = "" Then
+            txtloginusername.Focus()
+        ElseIf txtloginpassword.Text = "" Then
             btnpopup.BackColor = Color.LightCoral
             btnpopup.ForeColor = Color.Linen
             btnpopup.Text = "The Password Fiels is Empty"
             btnpopup.Show()
             PopOut()
-            txtpassword.Focus()
+            txtloginpassword.Focus()
         End If
     End Sub
     'HIDES THE POPUP BUTTON AFTER 3 SECONDS
@@ -129,7 +160,6 @@ Public Class DiCE
     Public Sub LogInProcess()
         userspanel.Dock = Fill
         userspanel.Show()
-        lbluser.Text = txtusername.Text
         loginpanel.Hide()
         btnlogout.Show()
         btnpopup.Show()
@@ -139,20 +169,28 @@ Public Class DiCE
         PopOut()
     End Sub
     'CALL IF LOGIN DETAILS ARE INVAID
-    Dim invalidcount As Integer = 0
     Public Sub invalid()
         btnpopup.BackColor = Color.LightCoral
         btnpopup.ForeColor = Color.Linen
         btnpopup.Text = "Invalid Username or Password"
         btnpopup.Show()
         PopOut()
-        txtusername.Clear()
-        txtpassword.Clear()
-        txtusername.Focus()
+        txtloginusername.Clear()
+        txtloginpassword.Clear()
+        txtloginusername.Focus()
         invalidcount += 1
 
         If invalidcount = 5 Then
-            MsgBox("Try again in 10 Seconds ")
+            countdown = 10
+            invalidlogintimer.Enabled = True
+            invalidlogintimer.Interval = 10000
+            lblinvalidmessage.Text = "Try again in " & countdown & " seconds"
+
+            lblinvalidmessage.Visible = True
+            txtloginusername.Enabled = False
+            txtloginpassword.Enabled = False
+            btnlogin.Visible = False
+            btnsignup.Visible = False
         ElseIf invalidcount = 6 Then
             MsgBox("Try again in 1 munite")
         ElseIf invalidcount = 7 Then
@@ -164,12 +202,6 @@ Public Class DiCE
         ElseIf invalidcount = 10 Then
             MsgBox("User Has been Deactivated")
         End If
-    End Sub
-    'INVALID LOGIN COUNTER
-
-    Public Sub invalidcounter()
-
-
     End Sub
     'THE LOG OUT BUTTON
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
@@ -183,15 +215,7 @@ Public Class DiCE
         PopOut()
         FormDiCE_Load(sender, e)
     End Sub
-    'HIDES THE POPUP WHEN CLICKED
-    Private Sub btnpopup_Click(sender As Object, e As EventArgs) Handles btnpopup.Click
-        btnpopup.Hide()
-    End Sub
-    'TIMER FOR POP UP
-    Private Sub buttonhidetimer_Tick(sender As Object, e As EventArgs) Handles buttonhidetimer.Tick
-        btnpopup.Hide()
-    End Sub
-    'CALL WHEN NEW USER RECORDS SAVE SUCCESSFULY
+
     Public Sub newrecordsaved()
         btnpopup.BackColor = Color.Aquamarine
         btnpopup.ForeColor = Color.DodgerBlue
@@ -460,10 +484,10 @@ Public Class DiCE
         adminsearchuserpanel.Hide()
         adminuserlogspanel.Hide()
         adminorderstatspanel.Hide()
-        tabadminadduser.BackColor = Color.PaleTurquoise
-        tabadminsearchuser.BackColor = Color.LightCyan
-        tabadminorderstats.BackColor = Color.LightCyan
-        tabadminviewuserlogs.BackColor = Color.LightCyan
+        adminactive1.Visible = True
+        adminactive2.Visible = False
+        adminactive3.Visible = False
+        adminactive4.Visible = False
     End Sub
     Private Sub tabadminupdateinfo_Click(sender As Object, e As EventArgs) Handles tabadminsearchuser.Click
         txtretrievenumber.Clear()
@@ -476,10 +500,10 @@ Public Class DiCE
         numbersearchpanel.Dock = Fill
         numbersearchpanel.Show()
         updatepanel.Hide()
-        tabadminadduser.BackColor = Color.LightCyan
-        tabadminsearchuser.BackColor = Color.PaleTurquoise
-        tabadminorderstats.BackColor = Color.LightCyan
-        tabadminviewuserlogs.BackColor = Color.LightCyan
+        adminactive1.Visible = False
+        adminactive2.Visible = True
+        adminactive3.Visible = False
+        adminactive4.Visible = False
     End Sub
     Private Sub tabviewuserlogs_Click(sender As Object, e As EventArgs) Handles tabadminviewuserlogs.Click
         adminuserlogspanel.Dock = Fill
@@ -487,10 +511,10 @@ Public Class DiCE
         adminadduserpanel.Hide()
         adminsearchuserpanel.Hide()
         adminorderstatspanel.Hide()
-        tabadminadduser.BackColor = Color.LightCyan
-        tabadminsearchuser.BackColor = Color.LightCyan
-        tabadminorderstats.BackColor = Color.LightCyan
-        tabadminviewuserlogs.BackColor = Color.PaleTurquoise
+        adminactive1.Visible = False
+        adminactive2.Visible = False
+        adminactive3.Visible = False
+        adminactive4.Visible = True
     End Sub
 
     Private Sub tabadminorderstats_Click(sender As Object, e As EventArgs) Handles tabadminorderstats.Click
@@ -499,11 +523,12 @@ Public Class DiCE
         adminadduserpanel.Hide()
         adminuserlogspanel.Hide()
         adminsearchuserpanel.Hide()
-        tabadminadduser.BackColor = Color.LightCyan
-        tabadminsearchuser.BackColor = Color.LightCyan
-        tabadminorderstats.BackColor = Color.PaleTurquoise
-        tabadminviewuserlogs.BackColor = Color.LightCyan
+        adminactive1.Visible = False
+        adminactive2.Visible = False
+        adminactive3.Visible = True
+        adminactive4.Visible = False
     End Sub
+
     Private Sub btnretrieve_Click(sender As Object, e As EventArgs) Handles btnretrieve.Click
         Try
             Dim SearchSQLstmt As String
@@ -547,7 +572,6 @@ Public Class DiCE
         End Try
     End Sub
 
-
     Private Sub btnadmindeleteuser_Click(sender As Object, e As EventArgs) Handles btnadmindeleteuser.Click
         Try
             Dim DeleteUserSQLstmt As String
@@ -588,23 +612,342 @@ Public Class DiCE
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub tabwaiterfoods_Click(sender As Object, e As EventArgs) Handles tabwaiterfoods.Click
+        waiteractive1.Visible = True
+        waiteractive2.Visible = False
+        waiteractive3.Visible = False
+        waiteractive4.Visible = False
+        waiteractive5.Visible = False
+        waiteractive6.Visible = False
+        waiterlogin()
+        foodspanel.Show()
+        foodspanel.Dock = DockStyle.Fill
+        drinkspanel.Hide()
+    End Sub
+
+    Private Sub tabwaiterdrinks_Click(sender As Object, e As EventArgs) Handles tabwaiterdrinks.Click
+        waiteractive1.Visible = False
+        waiteractive2.Visible = True
+        waiteractive3.Visible = False
+        waiteractive4.Visible = False
+        waiteractive5.Visible = False
+        waiteractive6.Visible = False
+        foodspanel.Hide()
+        foodspanel.Dock = DockStyle.Fill
+        drinkspanel.Show()
+    End Sub
+
+    Private Sub tabwaiterpastries_Click(sender As Object, e As EventArgs) Handles tabwaiterpastries.Click
+        waiteractive1.Visible = False
+        waiteractive2.Visible = False
+        waiteractive3.Visible = True
+        waiteractive4.Visible = False
+        waiteractive5.Visible = False
+        waiteractive6.Visible = False
+    End Sub
+
+    Private Sub tabwaitdessert_Click(sender As Object, e As EventArgs) Handles tabwaitdessert.Click
+        waiteractive1.Visible = False
+        waiteractive2.Visible = False
+        waiteractive3.Visible = False
+        waiteractive4.Visible = True
+        waiteractive5.Visible = False
+        waiteractive6.Visible = False
+    End Sub
+
+    Private Sub tabwaitersummary_Click(sender As Object, e As EventArgs) Handles tabwaitersummary.Click
+        waiteractive1.Visible = False
+        waiteractive2.Visible = False
+        waiteractive3.Visible = False
+        waiteractive4.Visible = False
+        waiteractive5.Visible = True
+        waiteractive6.Visible = False
+    End Sub
+
+    Private Sub tabwaitercancel_Click(sender As Object, e As EventArgs) Handles tabwaitercancel.Click
+        waiteractive1.Visible = False
+        waiteractive2.Visible = False
+        waiteractive3.Visible = False
+        waiteractive4.Visible = False
+        waiteractive5.Visible = False
+        waiteractive6.Visible = True
+    End Sub
+    Private Sub closeicon_MouseClick(sender As Object, e As MouseEventArgs) Handles closeicon.MouseClick
+        Me.Close()
+    End Sub
     Public Sub waiterlogin()
 
-        'Dim SQLstmtFoods, SQLstmtPastries, SQLstmtDrinks As String
-        'Dim da As New OleDbDataAdapter
-        'Dim dt As New DataTable
-        'SQLstmtFoods = "Select * From [Food_Menu] )"
-        'Dim mycon As New OleDbConnection(con)
-        'Dim mycmdFoods As New OleDbCommand(SQLstmtFoods, mycon)
-        ''Dim mycmdDC As New OleDbCommand(SQLstmtDC, mycon)
-        ''Dim mycmdDM As New OleDbCommand(SQLstmtDM, mycon)
-        ''Dim mycmdDW As New OleDbCommand(SQLstmtDW, mycon)
-        'mycmdFoods.Connection.Open()
-        'da.SelectCommand = mycmdFoods
-        'da.Fill(dt)
-        'FoodsDataGridView.DataSource = dt
+        Dim foodsSQLStmt As String = "Select * from Foods_Menu where CStr([Available]) = True And [name] <>'" & "" & "'"
+        Dim foodsCon As New OleDbConnection(con)
+        Dim foodsCmd As New OleDbCommand(foodsSQLStmt, foodsCon)
+        foodsCmd.Connection.Open()
+        Dim foodsRead As OleDbDataReader = foodsCmd.ExecuteReader(CommandBehavior.CloseConnection)
+        If foodsRead.Read And foodsRead.HasRows Then
+            Dim dt As DataTable = New DataTable()
+            da = New OleDbDataAdapter(foodsSQLStmt, foodsCon)
+            Dim tb As New DataTable
+            da.Fill(tb)
+            foodsDGV.DataSource = tb
+            foodsDGV.Columns(4).DefaultCellStyle.Format = "N2"
+            foodsDGV.Columns(6).CellTemplate.ValueType = GetType(Double)
 
-        'mycon.Close()
+            If foodsDGV.Rows.Count = 2 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 3 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 4 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 5 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 6 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 7 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodsname6.Text = foodsDGV.Rows(5).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodtypepanel6.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodprice6.Text = foodsDGV.Rows(5).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+                foodimg6.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(5).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 8 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodsname6.Text = foodsDGV.Rows(5).Cells(1).Value
+                foodsname7.Text = foodsDGV.Rows(6).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodtypepanel6.Visible = True
+                foodtypepanel7.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodprice6.Text = foodsDGV.Rows(5).Cells(4).Value
+                foodprice7.Text = foodsDGV.Rows(6).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+                foodimg6.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(5).Cells(6).Value & "")
+                foodimg7.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(6).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 9 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodsname6.Text = foodsDGV.Rows(5).Cells(1).Value
+                foodsname7.Text = foodsDGV.Rows(6).Cells(1).Value
+                foodsname8.Text = foodsDGV.Rows(7).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodtypepanel6.Visible = True
+                foodtypepanel7.Visible = True
+                foodtypepanel8.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodprice6.Text = foodsDGV.Rows(5).Cells(4).Value
+                foodprice7.Text = foodsDGV.Rows(6).Cells(4).Value
+                foodprice8.Text = foodsDGV.Rows(7).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+                foodimg6.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(5).Cells(6).Value & "")
+                foodimg7.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(6).Cells(6).Value & "")
+                foodimg8.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(7).Cells(6).Value & "")
+            ElseIf foodsDGV.Rows.Count = 10 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodsname6.Text = foodsDGV.Rows(5).Cells(1).Value
+                foodsname7.Text = foodsDGV.Rows(6).Cells(1).Value
+                foodsname8.Text = foodsDGV.Rows(7).Cells(1).Value
+                foodsname9.Text = foodsDGV.Rows(8).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodtypepanel6.Visible = True
+                foodtypepanel7.Visible = True
+                foodtypepanel8.Visible = True
+                foodtypepanel9.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodprice6.Text = foodsDGV.Rows(5).Cells(4).Value
+                foodprice7.Text = foodsDGV.Rows(6).Cells(4).Value
+                foodprice8.Text = foodsDGV.Rows(7).Cells(4).Value
+                foodprice9.Text = foodsDGV.Rows(8).Cells(4).Value
+
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+                foodimg6.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(5).Cells(6).Value & "")
+                foodimg7.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(6).Cells(6).Value & "")
+                foodimg8.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(7).Cells(6).Value & "")
+                foodimg9.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(8).Cells(6).Value & "")
+
+            ElseIf foodsDGV.Rows.Count = 11 Then
+                foodsname1.Text = foodsDGV.Rows(0).Cells(1).Value
+                foodsname2.Text = foodsDGV.Rows(1).Cells(1).Value
+                foodsname3.Text = foodsDGV.Rows(2).Cells(1).Value
+                foodsname4.Text = foodsDGV.Rows(3).Cells(1).Value
+                foodsname5.Text = foodsDGV.Rows(4).Cells(1).Value
+                foodsname6.Text = foodsDGV.Rows(5).Cells(1).Value
+                foodsname7.Text = foodsDGV.Rows(6).Cells(1).Value
+                foodsname8.Text = foodsDGV.Rows(7).Cells(1).Value
+                foodsname9.Text = foodsDGV.Rows(8).Cells(1).Value
+                foodsname10.Text = foodsDGV.Rows(9).Cells(1).Value
+                foodtypepanel1.Visible = True
+                foodtypepanel2.Visible = True
+                foodtypepanel3.Visible = True
+                foodtypepanel4.Visible = True
+                foodtypepanel5.Visible = True
+                foodtypepanel6.Visible = True
+                foodtypepanel7.Visible = True
+                foodtypepanel8.Visible = True
+                foodtypepanel9.Visible = True
+                foodtypepanel10.Visible = True
+                foodprice1.Text = foodsDGV.Rows(0).Cells(4).Value
+                foodprice2.Text = foodsDGV.Rows(1).Cells(4).Value
+                foodprice3.Text = foodsDGV.Rows(2).Cells(4).Value
+                foodprice4.Text = foodsDGV.Rows(3).Cells(4).Value
+                foodprice5.Text = foodsDGV.Rows(4).Cells(4).Value
+                foodprice6.Text = foodsDGV.Rows(5).Cells(4).Value
+                foodprice7.Text = foodsDGV.Rows(6).Cells(4).Value
+                foodprice8.Text = foodsDGV.Rows(7).Cells(4).Value
+                foodprice9.Text = foodsDGV.Rows(8).Cells(4).Value
+                foodprice10.Text = foodsDGV.Rows(9).Cells(4).Value
+                foodimg1.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(0).Cells(6).Value & "")
+                foodimg2.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(1).Cells(6).Value & "")
+                foodimg3.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(2).Cells(6).Value & "")
+                foodimg4.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(3).Cells(6).Value & "")
+                foodimg5.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(4).Cells(6).Value & "")
+                foodimg6.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(5).Cells(6).Value & "")
+                foodimg7.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(6).Cells(6).Value & "")
+                foodimg8.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(7).Cells(6).Value & "")
+                foodimg9.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(8).Cells(6).Value & "")
+                foodimg10.BackgroundImage = Image.FromFile("..\..\Resources\" & foodsDGV.Rows(9).Cells(6).Value & "")
+            End If
+
+            foodsCon.Close()
+        End If
     End Sub
+    Private Sub foodtypepanel1_Click(sender As Object, e As EventArgs) Handles foodtypepanel1.Click
+        If foodtypepanel1.BackColor = Color.Transparent Then
+            foodqty1.Value = 1
+            foodtypepanel1.BackColor = Color.PaleTurquoise
+            foodtypepanel1.ForeColor = Color.LightSeaGreen
+        Else
+            foodqty1.Value = 0
+            foodtypepanel1.BackColor = Color.Transparent
+        End If
+    End Sub
+    Private Sub foodimg1_Click(sender As Object, e As EventArgs) Handles foodimg1.Click
+        foodtypepanel1_Click(sender, e)
+    End Sub
+    Private Sub foodsname1_Click(sender As Object, e As EventArgs) Handles foodsname1.Click
+        foodtypepanel1_Click(sender, e)
+    End Sub
+
 
 End Class

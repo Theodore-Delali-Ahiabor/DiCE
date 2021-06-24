@@ -29,5 +29,6 @@ C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.DiCE.resources
 C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.Resources.resources
 C:\Users\theod\Desktop\DiCE\DiCE\obj\Debug\DiCE.vbproj.GenerateResource.Cache
 C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.DiCE.resources
-C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.vbproj.AssemblyReference.cache
 C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.vbproj.CoreCompileInputs.cache
+C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\bin\Debug\DiCEDatabase.accdb
+C:\Users\theod\Desktop\  \Projects\Visual Basic\DiCE\DiCE\obj\Debug\DiCE.vbproj.AssemblyReference.cache
