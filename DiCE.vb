@@ -22,12 +22,17 @@ Public Class DiCE
     End Sub
     'CALL WHEN NEW USER RECORDS SAVE SUCCESSFULY
     Private Sub invalidlogintimer_Tick(sender As Object, e As EventArgs) Handles invalidlogintimer.Tick
-        countdown -= 1
-        lblinvalidmessage.Visible = False
-        btnlogin.Visible = True
-        btnsignup.Visible = True
-        txtloginpassword.Enabled = True
-        txtloginusername.Enabled = True
+
+        If invalidlogintimer.Interval = 0 Then
+            lblinvalidmessage.Visible = False
+            btnlogin.Visible = True
+            btnsignup.Visible = True
+            txtloginpassword.Enabled = True
+            txtloginusername.Enabled = True
+        Else
+            countdown -= 1
+        End If
+
     End Sub
     Private Sub FormDiCE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnlogout.Hide()
@@ -178,9 +183,10 @@ Public Class DiCE
         txtloginusername.Clear()
         txtloginpassword.Clear()
         txtloginusername.Focus()
+        invalidlogintimer.Interval = 5000
         invalidcount += 1
 
-        If invalidcount = 5 Then
+        If invalidcount = 1 Then
             countdown = 10
             invalidlogintimer.Enabled = True
             invalidlogintimer.Interval = 10000
